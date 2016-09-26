@@ -5,8 +5,13 @@ node_js:
 sudo: false
 before_install:
 install: npm install
+jdk:
+  - oraclejdk8
 addons:
   sonarqube: true
+  apt:
+    packages:
+      - oracle-java8-installer
 env:
   global:
     secure: YUmmhHRjTv8Y4a9Dxku+4vxHl9syNApjWUIlpK4awHnQgIVDjGhnhj048kTRTBwe6xFIIcjZcB+LpWiwoElHeZGKC3ZrOEtncn6NVV1TwMHGC/cHrcS8EMnCIT+xYZavMWpRAwF11y4trhlBLR/SiPfl9u/clHPM06rMKSgQCkEoUUPNS6DEnTZIDiJYv36jXjYLbQay/lkg3mW25Wcsjr5bT2zI6XKUGqjCHuIDq+K0DPuBxJTb+eRG6Q+YPtNMX36brdBOZZaYFSzxPy/4n+h8lWRwcsV4972t/OdK+/APqLyto74wHzoaN8HO7cJXbyV94/SUkrr/P3XO9MRcgOUAeJaUBrsiyq9nN5irCeJpIA1V4QhpiWYLCLKmp6DVBkBRLUt/scHzNx/l7fAxWPP5ybC0J2ofa/54TWmfpwibrBH3Jxy1Peh98ktS+nWsti7NZwgFtqH4OtU7Bkn2N3P/LsvVkFLOtMf1sJhUIXsf4FIX+4BdKa93MY+xUV59cyszt5LBNSyKpNzs/iB1fmetN3Msb70Qt6+2qZqcy9so3cgbfK7AodgD3tx2EhYZkuH4bZqYVzzBxDllh4RqPDWF3Ra/ifw4fMnq2mR/htBCywC/qp8U79skRYDgLTa0r9jFTyxugXqBcxjFtK49/+kCPmHKb5KaVYlCHtMh7Ik=
