@@ -17,5 +17,8 @@
   "devDependencies": {
     "grunt": "1.0.1",
     "grunt-fh-build": "1.0.2"
+  },
+  "scripts": {
+    "ci": "grunt"
   }
 }
