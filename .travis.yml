@@ -12,5 +12,5 @@ addons:
   sonarqube: true
 script:
 - npm run ci
-- docker run --rm -v $(pwd):/data pierrevincent/sonar-runner -Dsonar.host.url=https://sonarqube.com
-  -Dsonar.login=$SONAR_TOKEN -Dsonar.github.oauth=$SONAR_GITHUB
+- '[ -z $SONAR_TOKEN ] && docker run --rm -v $(pwd):/data pierrevincent/sonar-runner -Dsonar.host.url=https://sonarqube.com
+  -Dsonar.login=$SONAR_TOKEN -Dsonar.github.oauth=$SONAR_GITHUB'
