@@ -8,10 +8,7 @@ services:
 - docker
 script:
 - npm run ci
-- if [ -v SONAR_TOKEN ]; then docker pull pierrevincent/sonar-runner && docker run
-  --rm -v $(pwd):/data pierrevincent/sonar-runner -Dsonar.host.url=https://sonarqube.com
-  -Dsonar.login=$SONAR_TOKEN -Dsonar.github.oauth=$SONAR_GITHUB -Dsonar.github.pullRequest=$TRAVIS_PULL_REQUEST -Dsonar.analysis.mode=analysis;
-  fi
+- .travis/sonarqube.sh
 notifications:
   email:
     on_success: never
