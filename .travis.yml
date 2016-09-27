@@ -3,14 +3,17 @@ node_js:
 - '0.10'
 - '4'
 sudo: false
+before_install:
+- docker pull pierrevincent/sonar-runner
 install: npm install
 env:
-  - CXX=g++-4.8
+  global:
+  - secure: ymK/mp06TXsTILTfJ3KKaaT73OLSrtXyvQh2TzBqdspM/2gFK14SBdKbLOKVHL9r4soxYdtSOrXBeTUVIbPCHAe09RsIbHIDC2FbSyXHkDZQv19M1gnPaldSAd82qVoADRj5Soav4xVpbsiDKX3KE4za1F+l+7lia8Jd2Yc9wRJ3M7Jm8K8HsAhLz62aG7rohP9dNvR2OHyrUNhJYW4WzcNEmSn3ffxGzxh6irgUimzAHx0NGWYOP4toLD0EqVeRY/m5PZZNEIsb4h2OqkA04FrXeBnNEVG5bQdwagTv+/aX30re+jE1zoAQX5/5pGXU/EikqriQoJ37SHkYFUp8ouUFQqA/JVZkraUhjmD8yig1a/25+6vX3BAu/uSEsN9BPSRXHM1+h/VUCQWtLijdSF/oboj6dLyTzpd20FOY+22DSrkwDCnD92QeP46ci2F0/xbfH54VXq4iHIaGFq/5DI9oik+us8gnz48kjgXoKsQeZmxQp16SBBuO1y5+TPyw6LdmWpROX9PMJXCFGj4ZtHpFuKL+Yqsftk/T3JmHG1oIBYsu8RVkmPsXtOPxSRND8fV4SWVQyuUm9hUVqYwubEzs35O/y8sC5coYi2Mn+KPcZf0+xtA5XAmhtZ2cfOA9l3eZTFSqJg8+fNr8Xy/KgqsnVyqxerX2XLYJzU09Nf0=
+services:
+- docker
 addons:
   sonarqube: true
-env:
-  global:
-    secure: YUmmhHRjTv8Y4a9Dxku+4vxHl9syNApjWUIlpK4awHnQgIVDjGhnhj048kTRTBwe6xFIIcjZcB+LpWiwoElHeZGKC3ZrOEtncn6NVV1TwMHGC/cHrcS8EMnCIT+xYZavMWpRAwF11y4trhlBLR/SiPfl9u/clHPM06rMKSgQCkEoUUPNS6DEnTZIDiJYv36jXjYLbQay/lkg3mW25Wcsjr5bT2zI6XKUGqjCHuIDq+K0DPuBxJTb+eRG6Q+YPtNMX36brdBOZZaYFSzxPy/4n+h8lWRwcsV4972t/OdK+/APqLyto74wHzoaN8HO7cJXbyV94/SUkrr/P3XO9MRcgOUAeJaUBrsiyq9nN5irCeJpIA1V4QhpiWYLCLKmp6DVBkBRLUt/scHzNx/l7fAxWPP5ybC0J2ofa/54TWmfpwibrBH3Jxy1Peh98ktS+nWsti7NZwgFtqH4OtU7Bkn2N3P/LsvVkFLOtMf1sJhUIXsf4FIX+4BdKa93MY+xUV59cyszt5LBNSyKpNzs/iB1fmetN3Msb70Qt6+2qZqcy9so3cgbfK7AodgD3tx2EhYZkuH4bZqYVzzBxDllh4RqPDWF3Ra/ifw4fMnq2mR/htBCywC/qp8U79skRYDgLTa0r9jFTyxugXqBcxjFtK49/+kCPmHKb5KaVYlCHtMh7Ik=
 script:
-  - npm run ci
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN
+- npm run ci
+- docker run --rm -v $(pwd):/data pierrevincent/sonar-runner -Dsonar.host.url=https://sonarqube.com
+  -Dsonar.login=$SONAR_TOKEN -Dsonar.github.oauth=$SONAR_GITHUB
