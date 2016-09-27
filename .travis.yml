@@ -6,9 +6,6 @@ sudo: false
 before_install:
 - docker pull pierrevincent/sonar-runner
 install: npm install
-env:
-  global:
-  - secure: ymK/mp06TXsTILTfJ3KKaaT73OLSrtXyvQh2TzBqdspM/2gFK14SBdKbLOKVHL9r4soxYdtSOrXBeTUVIbPCHAe09RsIbHIDC2FbSyXHkDZQv19M1gnPaldSAd82qVoADRj5Soav4xVpbsiDKX3KE4za1F+l+7lia8Jd2Yc9wRJ3M7Jm8K8HsAhLz62aG7rohP9dNvR2OHyrUNhJYW4WzcNEmSn3ffxGzxh6irgUimzAHx0NGWYOP4toLD0EqVeRY/m5PZZNEIsb4h2OqkA04FrXeBnNEVG5bQdwagTv+/aX30re+jE1zoAQX5/5pGXU/EikqriQoJ37SHkYFUp8ouUFQqA/JVZkraUhjmD8yig1a/25+6vX3BAu/uSEsN9BPSRXHM1+h/VUCQWtLijdSF/oboj6dLyTzpd20FOY+22DSrkwDCnD92QeP46ci2F0/xbfH54VXq4iHIaGFq/5DI9oik+us8gnz48kjgXoKsQeZmxQp16SBBuO1y5+TPyw6LdmWpROX9PMJXCFGj4ZtHpFuKL+Yqsftk/T3JmHG1oIBYsu8RVkmPsXtOPxSRND8fV4SWVQyuUm9hUVqYwubEzs35O/y8sC5coYi2Mn+KPcZf0+xtA5XAmhtZ2cfOA9l3eZTFSqJg8+fNr8Xy/KgqsnVyqxerX2XLYJzU09Nf0=
 services:
 - docker
 addons:
