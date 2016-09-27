@@ -6,8 +6,6 @@ sudo: false
 install: npm install
 services:
 - docker
-addons:
-  sonarqube: true
 script:
 - npm run ci
 - 'if [ -v SONAR_TOKEN ]; then docker pull pierrevincent/sonar-runner && docker run --rm -v $(pwd):/data pierrevincent/sonar-runner -Dsonar.host.url=https://sonarqube.com
