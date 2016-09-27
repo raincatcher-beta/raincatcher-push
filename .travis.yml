@@ -10,9 +10,7 @@ script:
 - npm run ci
 - .travis/sonarqube.sh
 notifications:
-  email:
-    on_success: never
-    on_failure: never
+  email: false
   slack:
     rooms:
       - secure: JqqzoZ/R3oKmN2UUkKk4K7DjIrGEULpGY25VnGhc19tnwvxp7zuIyj2Go0b93Y3vHKw4ZI7Dg1LKJKK2l/1Ixej4O5m4YazfDjcqYXJbpdbi0KAPxNihymEbxbMpss94QERomBr2pxj32RGLmMdVe7EQ1boKmjWo/6HcvOewEGNe+bhAJ6xbAZrrPi4siovNj6/W12b88v4ndXObp3LO1T41dsDNmGANzeW3KZSO+l9KNWY6KdXVCOFRfIEVZqnGQK7kjawIk71BWIBaiKIzI9DZwaekDuGotVxIh+49qEFkoM+pjYFpV+zkaV0Tk2LW4Ao8ZElLdOmR3txkZ0bMs8adJiPL2aMmQvhmu0OyGGVbaf+5VekXl6pDuaRvPxUUDmjQ7Iki2xMwXdwP+3taDy6uXvc1gfXQIWnm8+kGHNrlLLD6+f/XPZi1tjyKRNSHD0ok887P8csiNlodR4qlQgqaiNc2gZ57jSHf8uXhQtZHlFPO1zb9eOGTMUgxxRVHfoKF7wg2UGXLrQo+MHmoimIY8M69gow2UeeC1Xh93iWYNxVSPPDWq0R0prH94DlbIB7OyHrfUQqaxwb+lOP15Mq6ZXhCotesZh8F4urh4jhfAVQ2sPAtVBtGnEs9322ZvrsSt16RO0m8xXKVT69X07kcH1DVElFPuTO2zot6wzE=
