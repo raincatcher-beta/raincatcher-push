@@ -1,5 +1,10 @@
-'use strict';
 module.exports = function(grunt) {
-  grunt.loadNpmTasks('grunt-fh-build');
-  grunt.registerTask('default', ['fh:default']);
+  'use strict';
+  grunt.initConfig({
+    eslint: {
+      src: ["lib/**/*.js"]
+    }
+  });
+  grunt.loadNpmTasks("grunt-eslint");
+  grunt.registerTask('default', ['eslint']);
 };
