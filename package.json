@@ -15,10 +15,12 @@
     "q": "^1.4.1"
   },
   "devDependencies": {
-    "grunt": "1.0.1",
+    "grunt": "^1.0.1",
+    "grunt-eslint": "^18.0.0",
     "grunt-fh-build": "1.0.2"
   },
   "scripts": {
-    "ci": "grunt"
+    "ci": "grunt",
+    "test": "grunt eslint"
   }
 }
