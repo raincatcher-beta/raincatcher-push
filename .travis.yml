@@ -3,10 +3,13 @@ node_js:
   - '0.10'
   - '4.4'
 sudo: false
+before_install:
+  - npm install -g nsp
 install: npm install
 services:
   - docker
 script:
+  - nsp check
   - npm run ci
   - >-
     bash <(curl
