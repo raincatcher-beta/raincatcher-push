@@ -3,6 +3,10 @@
   "version": "0.0.12",
   "description": "An RainCatcher module to manage Push notification",
   "main": "lib/angular/push-ng.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feedhenry-raincatcher/raincatcher-push.git"
+  },
   "keywords": [
     "wfm",
     "push"
